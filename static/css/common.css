@@ -65,6 +65,15 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.nav-tabs .no-bgimg .nav-link{
+	color: grey;
+}
+
+.nav-tabs .no-bgimg .nav-link.active {
+  color: #000;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+}
+
 .card {
   position: relative;
   background-color: rgba(255, 255, 255, 0.3);

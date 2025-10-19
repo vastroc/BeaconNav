@@ -27,10 +27,10 @@ if (isset($_GET['target'])) {
         <?php if ($this->options->clock == 'Show') : ?>
             <section>
                 <div class="clock d-flex justify-content-center text-white">
-                    <span id="hour">00</span>
-                    <span class="fw-bold px-2" style="font-size: 60px;">:</span>
-                    <span id="minutes">00</span>
-                    <span id="seconds" class="align-self-end mb-3 ms-2" style="font-size: 32px;">00</span>
+                    <span id="hour" <?= $this->options->bgImgs === '[]' ? 'style="color: black"' : '' ?>>00</span>
+                    <span class="fw-bold px-2" style="font-size: 60px; <?= $this->options->bgImgs === '[]' ? 'color: black;' : '' ?>">:</span>
+                    <span id="minutes" <?= $this->options->bgImgs === '[]' ? 'style="color: black"' : '' ?>>00</span>
+                    <span id="seconds" class="align-self-end mb-3 ms-2" style="font-size: 32px; <?= $this->options->bgImgs === '[]' ? 'color: black;' : '' ?>">00</span>
                 </div>
             </section>
             <script>
@@ -106,7 +106,7 @@ if (isset($_GET['target'])) {
                         </span>
                     </li>
                 <?php else : ?>
-                    <li class="nav-item">
+                    <li class="nav-item <?= $this->options->bgImgs === '[]' ? 'no-bgimg' : '';?>">
                         <a class="nav-link<?php if ($this->is('index')) : ?> active" aria-current="page" <?php else : ?>" <?php endif; ?> href="/">
                             <?php
                             if (\Typecho\Plugin::exists('LZStat') && $this->options->plugin('LZStat')->orderBy !== 'created') {
@@ -119,7 +119,7 @@ if (isset($_GET['target'])) {
                     <?php \Widget\Metas\Category\Rows::alloc()->to($categories); ?>
                     <?php while ($categories->next()) : ?>
                         <?php if ($categories->levels === 0) : ?>
-                            <li class="nav-item">
+                            <li class="nav-item <?= $this->options->bgImgs === '[]' ? 'no-bgimg' : '';?>">
                                 <a class="nav-link<?php if ($this->is('category', $categories->slug)) : ?> active" aria-current="page" <?php else : ?>" <?php endif; ?> href=" <?php $categories->permalink(); ?>"><?php $categories->name(); ?></a>
                             </li>
                         <?php endif; ?>

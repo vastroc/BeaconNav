@@ -19,7 +19,7 @@
         <?php if ($this->options->particles == 'Show') : ?>
             <div id="particles-js" class="position-absolute top-0 start-0 end-0" style="bottom: 0.5rem;"></div>
         <?php endif; ?>
-        <header class="navbar navbar-expand-lg sticky-top bg-black bg-opacity-50 shadow" data-bs-theme="dark">
+        <header class="navbar navbar-expand-lg sticky-top bg-black shadow <?= $this->options->bgImgs === '[]' ? '"' : ' bg-opacity-50"' ?>" data-bs-theme="dark">
             <div class="container">
                 <a class="navbar-brand" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>">
                     <?php if ($this->options->logoUrl) : ?>
