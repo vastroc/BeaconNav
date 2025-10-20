@@ -395,7 +395,7 @@ body {
 }
 
 .site-info .site-desc span.btn .qrcode {
-  padding: 24px 8px 8px;
+  padding: 8px 8px 8px;
   background-color: #212529;
   position: absolute;
   top: 2.5rem;
@@ -409,7 +409,7 @@ body {
 }
 .site-info .site-desc span.btn:hover .qrcode {
   opacity: 1;
-  height: 176px;
+  height: auto;
 }
 
 .site-info .site-desc span.btn .qrcode img {
